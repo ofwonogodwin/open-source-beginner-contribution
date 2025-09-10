@@ -3,6 +3,15 @@
 This is A simple beginner-friendly personal profile website template perfect for new open source contributors! Built with HTML, CSS, and JavaScript using a beautiful **Jade Green Theme**.
 
 ##  Quick Start Guide
+### How to Contribute:
+0.**Star** the repository
+1. **Fork** this repository
+2. **Create** a new branch
+3. **Make** your changes
+4. **Test** your changes by opening `index.html`
+5. **Commit** your changes (`git commit -m 'Add awesome feature'`)
+6. **Push** to your branch (`git push origin feature/awesome-feature`)
+7. **Open** a Pull Request
 
 ### Step 1: Edit Your Information
 Open `index.html` and look for the comments that say:
@@ -57,14 +66,6 @@ This project welcomes contributions from beginners! Here's how you can help:
 5. **Add translations** - Multi-language support
 6. **Enhance mobile experience** - Better responsive design
 
-### How to Contribute:
-1. **Fork** this repository
-2. **Create** a new branch
-3. **Make** your changes
-4. **Test** your changes by opening `index.html`
-5. **Commit** your changes (`git commit -m 'Add awesome feature'`)
-6. **Push** to your branch (`git push origin feature/awesome-feature`)
-7. **Open** a Pull Request
 
 ### First-Time Contributors:
 - Look for issues labeled `good-first-issue`
