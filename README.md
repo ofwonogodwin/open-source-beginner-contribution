@@ -1,4 +1,5 @@
-#  Personal Profile Starter - Open Source Beginner Project
+### Nb This Project Is still Udergoing changes to have a better experince to all first time Open source Contributors
+#  Open Source Beginner Project
 
 This is A simple beginner-friendly personal profile website template perfect for new open source contributors! Built with HTML, CSS, and JavaScript using a beautiful **Jade Green Theme**.
 
