@@ -18,7 +18,6 @@ This is A simple beginner-friendly personal profile website template perfect for
 Open `index.html` and look for the comments that say:
 ```html
 <!--  EDIT YOUR INFORMATION BELOW: -->
-```
 
 **What to change:**
 1. **Your Name**: Replace `"Your Name Here"` with your actual name
