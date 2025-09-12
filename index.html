@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ Personal Profile - Interactive Edition</title>
+    <title>Personal Profile - Interactive Edition</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
     <!-- Background decorations -->
     <div class="bg-decoration"></div>
     <div class="bg-decoration-2"></div>
-    
+
     <!-- Edit Mode Toggle -->
     <div class="edit-toggle">
         <button id="editToggle" class="toggle-btn">
@@ -22,7 +26,7 @@
             <span>Edit Mode</span>
         </button>
     </div>
-    
+
     <!-- Main Container -->
     <div class="container">
         <div class="profile-wrapper">
@@ -42,7 +46,7 @@
                     <span>Available for opportunities</span>
                 </div>
             </div>
-            
+
             <!-- Profile Content -->
             <div class="profile-content">
                 <!-- Name and Title -->
@@ -54,16 +58,16 @@
                         Full Stack Developer & Open Source Enthusiast
                     </p>
                 </div>
-                
+
                 <!-- Description -->
                 <div class="description-section">
                     <p class="description editable" id="userDescription" data-placeholder="Click to add your bio">
-                        Passionate developer with a love for creating beautiful, functional web applications. 
-                        I enjoy contributing to open source projects and helping others learn to code. 
+                        Passionate developer with a love for creating beautiful, functional web applications.
+                        I enjoy contributing to open source projects and helping others learn to code.
                         Always exploring new technologies and building amazing things! 🚀
                     </p>
                 </div>
-                
+
                 <!-- Stats Section -->
                 <div class="stats-section">
                     <div class="stat-item">
@@ -79,7 +83,7 @@
                         <div class="stat-label">Followers</div>
                     </div>
                 </div>
-                
+
                 <!-- Social Links -->
                 <div class="social-section">
                     <div class="social-links">
@@ -90,7 +94,7 @@
                                 <span class="username editable" data-placeholder="yourusername">yourusername</span>
                             </span>
                         </a>
-                        
+
                         <a href="#" class="social-link linkedin" id="linkedinLink" data-username="">
                             <i data-feather="linkedin"></i>
                             <span class="social-text">
@@ -98,7 +102,7 @@
                                 <span class="username editable" data-placeholder="yourusername">yourusername</span>
                             </span>
                         </a>
-                        
+
                         <a href="#" class="social-link twitter" id="twitterLink" data-username="">
                             <i data-feather="twitter"></i>
                             <span class="social-text">
@@ -106,17 +110,18 @@
                                 <span class="username editable" data-placeholder="yourusername">yourusername</span>
                             </span>
                         </a>
-                        
+
                         <a href="#" class="social-link email" id="emailLink" data-email="">
                             <i data-feather="mail"></i>
                             <span class="social-text">
                                 <span class="platform">Email</span>
-                                <span class="username editable" data-placeholder="your.email@example.com">your.email@example.com</span>
+                                <span class="username editable"
+                                    data-placeholder="your.email@example.com">your.email@example.com</span>
                             </span>
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Action Buttons -->
                 <div class="action-section">
                     <button class="btn btn-primary" id="contactBtn">
@@ -128,7 +133,7 @@
                         <span>Download CV</span>
                     </button>
                 </div>
-                
+
                 <!-- Skills Section -->
                 <div class="skills-section">
                     <h3>Skills & Technologies</h3>
@@ -148,18 +153,19 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Save Indicator -->
         <div class="save-indicator" id="saveIndicator">
             <i data-feather="check"></i>
             <span>Changes saved automatically</span>
         </div>
     </div>
-    
+
     <!-- Hidden file input for image upload -->
     <input type="file" id="imageInput" accept="image/*" style="display: none;">
-    
+
     <!-- Link to JavaScript file -->
     <script src="script.js"></script>
 </body>
+
 </html>

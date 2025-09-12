@@ -9,7 +9,7 @@
 */
 
 // Initialize Feather Icons
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     feather.replace();
     initializeProfile();
 });
@@ -42,11 +42,11 @@ function initializeProfile() {
     console.log('🎉 Welcome to your Interactive Personal Profile!');
     console.log('✨ Features: Click-to-edit, Auto-save, Image upload');
     console.log('🎯 Toggle edit mode to customize your profile!');
-    
+
     loadProfileData();
     setupEventListeners();
     renderProfile();
-    
+
     // Show welcome message
     setTimeout(() => {
         showNotification('👋 Welcome! Toggle edit mode to customize your profile', 'info');
@@ -84,21 +84,21 @@ function renderProfile() {
     document.getElementById('userName').textContent = profileData.name;
     document.getElementById('userTitle').textContent = profileData.title;
     document.getElementById('userDescription').textContent = profileData.description;
-    
+
     // Update stats
     document.getElementById('projectsCount').textContent = profileData.stats.projects;
     document.getElementById('contributionsCount').textContent = profileData.stats.contributions;
     document.getElementById('followersCount').textContent = profileData.stats.followers;
-    
+
     // Update social links
     updateSocialLink('github', profileData.social.github);
     updateSocialLink('linkedin', profileData.social.linkedin);
     updateSocialLink('twitter', profileData.social.twitter);
     updateSocialLink('email', profileData.social.email);
-    
+
     // Update skills
     renderSkills();
-    
+
     // Update profile image if exists
     if (profileData.image) {
         updateProfileImage(profileData.image);
@@ -109,15 +109,15 @@ function renderProfile() {
 function updateSocialLink(platform, data) {
     const linkElement = document.getElementById(`${platform}Link`);
     const usernameElement = linkElement.querySelector('.username');
-    
+
     if (usernameElement) {
         usernameElement.textContent = data.username;
     }
-    
+
     // Update href based on platform
     let url = data.url;
     if (!url && data.username !== getPlaceholder(platform)) {
-        switch(platform) {
+        switch (platform) {
             case 'github':
                 url = `https://github.com/${data.username}`;
                 break;
@@ -132,7 +132,7 @@ function updateSocialLink(platform, data) {
                 break;
         }
     }
-    
+
     linkElement.href = url || '#';
     linkElement.target = platform === 'email' ? '' : '_blank';
 }
@@ -141,7 +141,7 @@ function updateSocialLink(platform, data) {
 function getPlaceholder(platform) {
     const placeholders = {
         github: 'yourusername',
-        linkedin: 'yourusername', 
+        linkedin: 'yourusername',
         twitter: 'yourusername',
         email: 'your.email@example.com'
     };
@@ -152,7 +152,7 @@ function getPlaceholder(platform) {
 function renderSkills() {
     const skillsContainer = document.getElementById('skillsContainer');
     skillsContainer.innerHTML = '';
-    
+
     profileData.skills.forEach((skill, index) => {
         const skillElement = createSkillElement(skill, index);
         skillsContainer.appendChild(skillElement);
@@ -165,14 +165,14 @@ function createSkillElement(skill, index) {
     span.className = 'skill-tag';
     span.textContent = skill;
     span.dataset.index = index;
-    
+
     if (editMode) {
         span.addEventListener('click', () => editSkill(index));
         span.addEventListener('dblclick', () => removeSkill(index));
         span.title = 'Click to edit, double-click to remove';
         span.style.cursor = 'pointer';
     }
-    
+
     return span;
 }
 
@@ -181,26 +181,26 @@ function setupEventListeners() {
     // Edit toggle button
     const editToggle = document.getElementById('editToggle');
     editToggle.addEventListener('click', toggleEditMode);
-    
+
     // Image upload
     const profileImage = document.getElementById('profileImage');
     const imageInput = document.getElementById('imageInput');
-    
+
     profileImage.addEventListener('click', () => {
         if (editMode) imageInput.click();
     });
-    
+
     imageInput.addEventListener('change', handleImageUpload);
-    
+
     // Contact button
     document.getElementById('contactBtn').addEventListener('click', handleContact);
-    
+
     // Download button  
     document.getElementById('downloadBtn').addEventListener('click', handleDownload);
-    
+
     // Add skill button
     document.getElementById('addSkillBtn').addEventListener('click', addSkill);
-    
+
     // Setup editable elements
     setupEditableElements();
 }
@@ -208,16 +208,16 @@ function setupEventListeners() {
 // Setup editable elements
 function setupEditableElements() {
     const editables = document.querySelectorAll('.editable');
-    
+
     editables.forEach(element => {
         element.addEventListener('click', () => {
             if (editMode) makeEditable(element);
         });
-        
+
         element.addEventListener('blur', () => {
             if (editMode) saveEditableContent(element);
         });
-        
+
         element.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
@@ -233,7 +233,7 @@ function toggleEditMode() {
     const toggleBtn = document.getElementById('editToggle');
     const toggleText = toggleBtn.querySelector('span');
     const body = document.body;
-    
+
     if (editMode) {
         body.classList.add('edit-mode');
         toggleBtn.classList.add('active');
@@ -245,7 +245,7 @@ function toggleEditMode() {
         toggleText.textContent = 'Edit Mode';
         showNotification('👀 View mode enabled', 'info');
     }
-    
+
     renderSkills(); // Re-render skills with correct event listeners
 }
 
@@ -253,20 +253,20 @@ function toggleEditMode() {
 function makeEditable(element) {
     const currentText = element.textContent;
     const placeholder = element.dataset.placeholder || '';
-    
+
     // Skip if already editing
     if (element.contentEditable === 'true') return;
-    
+
     element.contentEditable = true;
     element.focus();
-    
+
     // Select all text
     const range = document.createRange();
     range.selectNodeContents(element);
     const selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
-    
+
     // Style for editing
     element.style.outline = '2px solid var(--jade-primary)';
     element.style.backgroundColor = 'rgba(0, 187, 119, 0.1)';
@@ -277,18 +277,18 @@ function makeEditable(element) {
 // Save editable content
 function saveEditableContent(element) {
     if (element.contentEditable !== 'true') return;
-    
+
     element.contentEditable = false;
     element.style.outline = '';
     element.style.backgroundColor = '';
     element.style.borderRadius = '';
     element.style.padding = '';
-    
+
     const newContent = element.textContent.trim();
     const elementId = element.id;
-    
+
     // Update profile data based on element
-    switch(elementId) {
+    switch (elementId) {
         case 'userName':
             profileData.name = newContent;
             break;
@@ -316,7 +316,7 @@ function saveEditableContent(element) {
                 updateSocialLink(platform, profileData.social[platform]);
             }
     }
-    
+
     saveProfileData();
 }
 
@@ -324,28 +324,28 @@ function saveEditableContent(element) {
 function handleImageUpload(event) {
     const file = event.target.files[0];
     if (!file) return;
-    
+
     // Validate file type
     if (!file.type.startsWith('image/')) {
         showNotification('Please select a valid image file', 'error');
         return;
     }
-    
+
     // Validate file size (max 5MB)
     if (file.size > 5 * 1024 * 1024) {
         showNotification('Image size should be less than 5MB', 'error');
         return;
     }
-    
+
     const reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = function (e) {
         const imageData = e.target.result;
         profileData.image = imageData;
         updateProfileImage(imageData);
         saveProfileData();
         showNotification('📸 Profile image updated!', 'success');
     };
-    
+
     reader.readAsDataURL(file);
 }
 
@@ -364,7 +364,7 @@ function addSkill() {
         showNotification('Enable edit mode to add skills', 'info');
         return;
     }
-    
+
     const skillName = prompt('Enter skill name:');
     if (skillName && skillName.trim()) {
         profileData.skills.push(skillName.trim());
@@ -377,7 +377,7 @@ function addSkill() {
 function editSkill(index) {
     const currentSkill = profileData.skills[index];
     const newSkill = prompt('Edit skill:', currentSkill);
-    
+
     if (newSkill !== null && newSkill.trim()) {
         profileData.skills[index] = newSkill.trim();
         renderSkills();
@@ -426,7 +426,7 @@ Projects: ${profileData.stats.projects}
 Contributions: ${profileData.stats.contributions}
 Followers: ${profileData.stats.followers}
 `.trim();
-    
+
     downloadTextFile(resumeContent, `${profileData.name.replace(/\s+/g, '_')}_Resume.txt`);
     showNotification('📄 Resume downloaded!', 'success');
 }
@@ -445,7 +445,7 @@ function downloadTextFile(content, filename) {
 function showSaveIndicator() {
     const indicator = document.getElementById('saveIndicator');
     indicator.classList.add('show');
-    
+
     setTimeout(() => {
         indicator.classList.remove('show');
     }, 2000);
@@ -456,7 +456,7 @@ function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.textContent = message;
-    
+
     // Style the notification
     Object.assign(notification.style, {
         position: 'fixed',
@@ -473,25 +473,25 @@ function showNotification(message, type = 'info') {
         opacity: '0',
         transition: 'all 0.3s ease'
     });
-    
+
     // Set background color based on type
     const colors = {
         info: '#00BB77',
-        success: '#10b981', 
+        success: '#10b981',
         error: '#ef4444',
         warning: '#f59e0b'
     };
-    
+
     notification.style.backgroundColor = colors[type] || colors.info;
-    
+
     document.body.appendChild(notification);
-    
+
     // Show notification
     setTimeout(() => {
         notification.style.opacity = '1';
         notification.style.transform = 'translateX(-50%) translateY(0)';
     }, 100);
-    
+
     // Hide notification
     setTimeout(() => {
         notification.style.opacity = '0';
@@ -516,13 +516,13 @@ function importProfile() {
     const input = document.createElement('input');
     input.type = 'file';
     input.accept = '.json';
-    
-    input.onchange = function(event) {
+
+    input.onchange = function (event) {
         const file = event.target.files[0];
         if (!file) return;
-        
+
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = function (e) {
             try {
                 const importedData = JSON.parse(e.target.result);
                 profileData = { ...profileData, ...importedData };
@@ -535,7 +535,7 @@ function importProfile() {
         };
         reader.readAsText(file);
     };
-    
+
     input.click();
 }
 
