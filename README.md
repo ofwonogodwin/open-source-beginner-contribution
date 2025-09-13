@@ -3,7 +3,7 @@
 
 This is A simple beginner-friendly personal profile website template perfect for new open source contributors! Built with HTML, CSS, and JavaScript using a beautiful **Jade Green Theme**.
 
-##  Quick Start Guide
+##  Quick Start Guide.
 ### How to Contribute:
 0.**Star** the repository
 1. **Fork** this repository
