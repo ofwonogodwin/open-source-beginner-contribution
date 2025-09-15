@@ -1,13 +1,236 @@
 /* 
-MODERN JADE GREEN THEME - Interactive Personal Profile
-Beautiful, modern design with persistent editing capabilities
-Color Palette:
-- Background: #f8fafc (soft white)
-- Primary: #00BB77 (jade green)
-- Secondary: #1f2937 (charcoal)
-- Accent: #34d399 (light jade)
-- Gradient: Linear combinations of jade tones
+🎨 Simple & Beautiful Profile Styling
+Perfect for beginners - easy to understand and customize!
+
+Colors used:
+- Background: Light gray #f5f7fa
+- Card: White #ffffff  
+- Primary: Jade green #00BB77
+- Text: Dark gray #2d3748
+- Light text: Medium gray #718096
 */
+
+/* Reset - makes all browsers look the same */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page background */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    color: #2d3748;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Main container - centers everything */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Profile card - the white box */
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect - card lifts up slightly */
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Profile picture */
+.profile-picture {
+    margin-bottom: 20px;
+}
+
+.picture-placeholder {
+    width: 120px;
+    height: 120px;
+    background-color: #00BB77;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.picture-placeholder:hover {
+    transform: scale(1.05);
+}
+
+/* If you add a real photo, this styles it */
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #00BB77;
+}
+
+/* Name styling */
+.name {
+    font-size: 2.5em;
+    color: #00BB77;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Job title */
+.title {
+    font-size: 1.2em;
+    color: #718096;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Bio text */
+.bio {
+    font-size: 1.1em;
+    color: #4a5568;
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Social links container */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Individual social links */
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background-color: #00BB77;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+/* Social link hover effect */
+.social-link:hover {
+    background-color: #34d399;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 187, 119, 0.3);
+}
+
+/* Fun button */
+.fun-btn {
+    background: linear-gradient(45deg, #00BB77, #34d399);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.fun-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 187, 119, 0.3);
+}
+
+/* Instructions box */
+.instructions {
+    background-color: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.instructions p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #00BB77;
+}
+
+.instructions ul {
+    margin-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 5px;
+    color: #4a5568;
+}
+
+/* Editable text styling */
+[contenteditable="true"]:hover {
+    background-color: rgba(0, 187, 119, 0.1);
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: -2px -5px;
+    cursor: text;
+}
+
+[contenteditable="true"]:focus {
+    outline: 2px solid #00BB77;
+    background-color: rgba(0, 187, 119, 0.1);
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: -2px -5px;
+}
+
+/* Mobile phone styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .profile-card {
+        padding: 30px 20px;
+    }
+
+    .name {
+        font-size: 2em;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-link {
+        width: 200px;
+        justify-content: center;
+    }
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    .bio {
+        font-size: 1em;
+    }
+
+    .instructions {
+        font-size: 0.9em;
+    }
+}
 
 :root {
     --bg-primary: #f8fafc;

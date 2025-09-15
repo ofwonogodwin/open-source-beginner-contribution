@@ -4,167 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Profile - Interactive Edition</title>
+    <title>My Personal Profile</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
-    <!-- Background decorations -->
-    <div class="bg-decoration"></div>
-    <div class="bg-decoration-2"></div>
-
-    <!-- Edit Mode Toggle -->
-    <div class="edit-toggle">
-        <button id="editToggle" class="toggle-btn">
-            <i data-feather="edit-3"></i>
-            <span>Edit Mode</span>
-        </button>
-    </div>
-
-    <!-- Main Container -->
+    <!-- Main container -->
     <div class="container">
-        <div class="profile-wrapper">
-            <!-- Profile Image Section -->
-            <div class="profile-image-section">
-                <div class="profile-image" id="profileImage">
-                    <div class="image-placeholder">
-                        <i data-feather="user"></i>
-                    </div>
-                    <div class="image-upload-overlay" id="imageUpload">
-                        <i data-feather="camera"></i>
-                        <span>Add Photo</span>
-                    </div>
-                </div>
-                <div class="status-indicator">
-                    <div class="status-dot"></div>
-                    <span>Available for opportunities</span>
-                </div>
+        <div class="profile-card">
+
+            <!-- Profile Picture -->
+            <div class="profile-picture">
+                <div class="picture-placeholder">👤</div>
+                <!-- 🎯 TO ADD YOUR PHOTO: Replace the emoji above with <img src="your-photo.jpg" alt="Your Name"> -->
             </div>
 
-            <!-- Profile Content -->
-            <div class="profile-content">
-                <!-- Name and Title -->
-                <div class="name-section">
-                    <h1 class="name editable" id="userName" data-placeholder="Click to add your name">
-                        Your Name Here
-                    </h1>
-                    <p class="title editable" id="userTitle" data-placeholder="Click to add your title">
-                        Full Stack Developer & Open Source Enthusiast
-                    </p>
-                </div>
+            <!-- Name Section -->
+            <!-- ✏️ EDIT YOUR NAME: Change the text below -->
+            <h1 class="name" contenteditable="true" data-save="name">Your Name Here</h1>
 
-                <!-- Description -->
-                <div class="description-section">
-                    <p class="description editable" id="userDescription" data-placeholder="Click to add your bio">
-                        Passionate developer with a love for creating beautiful, functional web applications.
-                        I enjoy contributing to open source projects and helping others learn to code.
-                        Always exploring new technologies and building amazing things! 🚀
-                    </p>
-                </div>
+            <!-- Job Title -->
+            <!-- ✏️ EDIT YOUR TITLE: Change the text below -->
+            <p class="title" contenteditable="true" data-save="title">Web Developer & Designer</p>
 
-                <!-- Stats Section -->
-                <div class="stats-section">
-                    <div class="stat-item">
-                        <div class="stat-number editable" id="projectsCount" data-placeholder="0">15+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number editable" id="contributionsCount" data-placeholder="0">120+</div>
-                        <div class="stat-label">Contributions</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number editable" id="followersCount" data-placeholder="0">500+</div>
-                        <div class="stat-label">Followers</div>
-                    </div>
-                </div>
+            <!-- About Me -->
+            <!-- ✏️ EDIT YOUR BIO: Change the text below -->
+            <p class="bio" contenteditable="true" data-save="bio">
+                Hi! I'm passionate about coding and creating amazing websites.
+                I love learning new technologies and contributing to open source projects.
+                Let's connect and build something awesome together! 🚀
+            </p>
 
-                <!-- Social Links -->
-                <div class="social-section">
-                    <div class="social-links">
-                        <a href="#" class="social-link github" id="githubLink" data-username="">
-                            <i data-feather="github"></i>
-                            <span class="social-text">
-                                <span class="platform">GitHub</span>
-                                <span class="username editable" data-placeholder="yourusername">yourusername</span>
-                            </span>
-                        </a>
+            <!-- Social Links -->
+            <div class="social-links">
+                <!-- 🔗 EDIT YOUR LINKS: Replace the # with your actual URLs -->
+                <a href="#" class="social-link github" target="_blank">
+                    <span class="icon">🐙</span>
+                    <span>GitHub</span>
+                </a>
 
-                        <a href="#" class="social-link linkedin" id="linkedinLink" data-username="">
-                            <i data-feather="linkedin"></i>
-                            <span class="social-text">
-                                <span class="platform">LinkedIn</span>
-                                <span class="username editable" data-placeholder="yourusername">yourusername</span>
-                            </span>
-                        </a>
+                <a href="#" class="social-link linkedin" target="_blank">
+                    <span class="icon">💼</span>
+                    <span>LinkedIn</span>
+                </a>
 
-                        <a href="#" class="social-link twitter" id="twitterLink" data-username="">
-                            <i data-feather="twitter"></i>
-                            <span class="social-text">
-                                <span class="platform">Twitter</span>
-                                <span class="username editable" data-placeholder="yourusername">yourusername</span>
-                            </span>
-                        </a>
-
-                        <a href="#" class="social-link email" id="emailLink" data-email="">
-                            <i data-feather="mail"></i>
-                            <span class="social-text">
-                                <span class="platform">Email</span>
-                                <span class="username editable"
-                                    data-placeholder="your.email@example.com">your.email@example.com</span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="action-section">
-                    <button class="btn btn-primary" id="contactBtn">
-                        <i data-feather="message-circle"></i>
-                        <span>Get In Touch</span>
-                    </button>
-                    <button class="btn btn-secondary" id="downloadBtn">
-                        <i data-feather="download"></i>
-                        <span>Download CV</span>
-                    </button>
-                </div>
-
-                <!-- Skills Section -->
-                <div class="skills-section">
-                    <h3>Skills & Technologies</h3>
-                    <div class="skills-container" id="skillsContainer">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag editable" data-placeholder="Add skill">Git</span>
-                    </div>
-                    <button class="add-skill-btn" id="addSkillBtn">
-                        <i data-feather="plus"></i>
-                        Add Skill
-                    </button>
-                </div>
+                <a href="#" class="social-link email">
+                    <span class="icon">📧</span>
+                    <span>Email Me</span>
+                </a>
             </div>
-        </div>
 
-        <!-- Save Indicator -->
-        <div class="save-indicator" id="saveIndicator">
-            <i data-feather="check"></i>
-            <span>Changes saved automatically</span>
+            <!-- Fun Button -->
+            <button class="fun-btn" onclick="showMessage()">
+                Click me! 🎉
+            </button>
+
+            <!-- Simple Instructions -->
+            <div class="instructions">
+                <p>💡 <strong>How to customize:</strong></p>
+                <ul>
+                    <li>Click on any text above to edit it directly!</li>
+                    <li>Replace the # in links with your real URLs</li>
+                    <li>Changes save automatically in your browser</li>
+                </ul>
+            </div>
+
         </div>
     </div>
 
-    <!-- Hidden file input for image upload -->
-    <input type="file" id="imageInput" accept="image/*" style="display: none;">
-
-    <!-- Link to JavaScript file -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 

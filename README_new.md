@@ -2,18 +2,6 @@
 
 A **super simple** personal profile website that beginners can easily understand and customize. No complex code, no scary frameworks - just clean HTML, CSS, and a little JavaScript!
 
-<<<<<<< HEAD
-##  Quick Start Guide.
-### How to Contribute:
-0.**Star** the repository
-1. **Fork** this repository
-2. **Create** a new branch
-3. **Make** your changes
-4. **Test** your changes by opening `index.html`
-5. **Commit** your changes (`git commit -m 'Add awesome feature'`)
-6. **Push** to your branch (`git push origin feature/awesome-feature`)
-7. **Open** a Pull Request
-=======
 ![Beginner Friendly](https://img.shields.io/badge/Beginner-Friendly-00BB77?style=for-the-badge)
 ![No Frameworks](https://img.shields.io/badge/No%20Frameworks-Just%20HTML%2FCSS%2FJS-34d399?style=for-the-badge)
 
@@ -36,7 +24,6 @@ A **super simple** personal profile website that beginners can easily understand
 ```
 
 ## 🚀 Get Started in 30 Seconds!
->>>>>>> 55aa7a6 (Rechanged the Code Base)
 
 ### Step 1: Edit Your Information
 1. Open `index.html` in any browser
